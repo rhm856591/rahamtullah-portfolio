@@ -3,15 +3,19 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const sendEmail = require('./utility'); // Import the utility function
 const app = express();
+require('dotenv').config();
+
 
 app.use(cors());
 app.use(express.json()); // To parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
 
+console.log(process.env.MONGO_URL);
+
 // Connect to MongoDB
 const connect = async () => {
     try {
-        await mongoose.connect('mongodb://localhost:27017/rahamtullah', {
+        await mongoose.connect(process.env.MONGO_URL, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
