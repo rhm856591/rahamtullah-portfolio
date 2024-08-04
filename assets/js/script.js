@@ -157,37 +157,3 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
-
-
-  // document.getElementById('contactForm').addEventListener('submit', async function (event) {
-  //   event.preventDefault(); // Prevent default form submission
-
-  //   // Show loading screen
-  //   document.getElementById('loadingScreen').style.display = 'flex';
-
-  //   const formData = new FormData(this);
-
-  //   try {
-  //     const response = await fetch('http://localhost:3000/', {
-  //       method: 'POST',
-  //       body: formData
-  //     });
-
-  //     const result = await response.json();
-
-  //     // Hide the loading screen
-  //     document.getElementById('loadingScreen').style.display = 'none';
-
-  //     if (response.ok) {
-  //       alert('Data saved successfully');
-  //     } else {
-  //       alert(result.message || 'Failed to submit the form'); // Error message from server
-  //     }
-
-  //   } catch (error) {
-  //     // Hide the loading screen and show error message
-  //     document.getElementById('loadingScreen').style.display = 'none';
-  //     alert(error.message || 'Failed to submit the form. Please try again.');
-  //   }
-  // });
-
