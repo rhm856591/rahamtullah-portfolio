@@ -159,40 +159,35 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 
 
+  // document.getElementById('contactForm').addEventListener('submit', async function (event) {
+  //   event.preventDefault(); // Prevent default form submission
 
-document.getElementById('contactForm').addEventListener('submit', async function(event) {
-  event.preventDefault(); // Prevent default form submission
+  //   // Show loading screen
+  //   document.getElementById('loadingScreen').style.display = 'flex';
 
-  // Show loading screen
-  document.getElementById('loadingScreen').style.display = 'flex';
+  //   const formData = new FormData(this);
 
-  const formData = new FormData(this);
+  //   try {
+  //     const response = await fetch('http://localhost:3000/', {
+  //       method: 'POST',
+  //       body: formData
+  //     });
 
-  try {
-      const response = await fetch('/', {
-          method: 'POST',
-          body: formData
-      });
+  //     const result = await response.json();
 
-      // Handle non-2xx HTTP responses
-      if (!response.ok) {
-          throw new Error(`Server responded with status ${response.status}`);
-      }
+  //     // Hide the loading screen
+  //     document.getElementById('loadingScreen').style.display = 'none';
 
-      const result = await response.json();
+  //     if (response.ok) {
+  //       alert('Data saved successfully');
+  //     } else {
+  //       alert(result.message || 'Failed to submit the form'); // Error message from server
+  //     }
 
-      // Check if the server returned an error
-      if (result.message && result.message.includes('Failed')) {
-          throw new Error(result.message);
-      }
+  //   } catch (error) {
+  //     // Hide the loading screen and show error message
+  //     document.getElementById('loadingScreen').style.display = 'none';
+  //     alert(error.message || 'Failed to submit the form. Please try again.');
+  //   }
+  // });
 
-      // Hide loading screen and show success message
-      document.getElementById('loadingScreen').style.display = 'none';
-      alert(result.message);
-
-  } catch (error) {
-      // Hide loading screen and show error message
-      document.getElementById('loadingScreen').style.display = 'none';
-      alert(error.message || 'Failed to submit the form. Please try again.');
-  }
-});
