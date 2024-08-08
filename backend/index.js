@@ -10,7 +10,6 @@ app.use(cors());
 app.use(express.json()); // To parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
 
-console.log(process.env.MONGO_URL);
 
 // Connect to MongoDB
 const connect = async () => {
